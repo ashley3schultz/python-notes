@@ -39,3 +39,35 @@ print(user1.change_age())
  # __init__ # overides pythone method
  # _name # private methode
  # __age # name mangling user__age 
+
+ class Drink:
+    def __init__(self, name, klass):
+        self.name = name
+        self.klass = klass
+
+    def __repr__(self):
+        return "A {} named {}!".format(self.klass, self.name)
+
+class Tea(Drink):
+    def __init__(self, name, oxid, temp):
+        super().__init__(name, "Tea")
+        self.temp = temp
+        self.oxid = oxid
+
+    # @property
+    # def type(self):
+    #     return self.oxid
+    #
+    # @temp.setter
+    # def temp(self, val):
+    #     if val > 212:
+    #         self.temp = 212
+    #     elif val < 150:
+    #         self.temp = 150
+    #     else:
+    #         self.temp = val
+
+tea1 = Tea("Longjing", "Green", 170)
+print(tea1.oxid, tea1.klass)
+print(tea1.name)
+print(tea1.temp)
